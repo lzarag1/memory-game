@@ -1,0 +1,187 @@
+@media screen and (min-width: 375px and max-width: 600px) {
+
+  html {
+      box-sizing: border-box;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+      box-sizing: inherit;
+  }
+
+  html,
+  body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }
+
+  body {
+      background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+      font-family: 'Coda', cursive;
+  }
+
+  .container {
+      display: flex;
+      justify-content: center; /* Vertically centers items */
+      align-items: center;
+      flex-direction: column;
+  }
+
+  h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+  }
+
+  /*
+   * Styles for the deck of cards
+   */
+  .deck {
+      width: 660px;
+      min-height: 680px;
+      background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+      padding: 32px;
+      border-radius: 10px;
+      box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 0 3em;
+  }
+
+  .deck .card {
+      height: 125px;
+      width: 125px;
+      background: #2e3d49;
+      font-size: 0;
+      color: #ffffff;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  }
+
+  .deck .card.open {
+      transform: rotateY(0);
+      background: #02b3e4;
+      cursor: default;
+  }
+
+  .deck .card.show {
+      font-size: 33px;
+  }
+
+  .deck .card.match {
+      cursor: default;
+      background: #02ccba;
+      font-size: 33px;
+  }
+
+  /*
+   * Styles for the Score Panel
+   */
+  .score-panel {
+      text-align: left;
+      width: 345px;
+      margin-bottom: 10px;
+  }
+
+  .score-panel .stars {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      margin: 0 5px 0 0;
+  }
+
+  .score-panel .stars li {
+      list-style: none;
+      display: inline-block;
+  }
+
+  .score-panel .restart {
+      float: right;
+      cursor: pointer;
+  }
+
+  .results-rating  {
+    list-style: none;
+    display: inline-block;
+  }
+
+  .winner-message {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    position: absolute;
+    text-align: center;
+    width: 595px;
+    height: 300px;
+    background-color: white;
+    outline-style: solid;
+  }
+
+  .winner-message li {
+    display: inline;
+    position: relative;
+    right: 20px;
+  }
+
+  #moves-message {
+    margin-top: -2px;
+  }
+
+  .winner-message .stars {
+    margin-top: -10px;
+    margin-bottom: 5px;
+
+  }
+
+  .winner-message .timer {
+
+  }
+
+  .winner-message .restart {
+    margin-top: -30px;
+
+  }
+
+  .winner-message .moves-outer {
+  }
+
+  .animation {
+    animation-duration: 2s;
+    animation-name: animation;
+  }
+
+  @keyframes animation {
+    from {
+      width: 125px;
+      height: 125px;
+    }
+
+    20% {
+      background-color: #94f7d6;
+    }
+
+    50% {
+      background-color: #68f442;
+      width: 140px;
+      height: 140px;
+    }
+
+    80% {
+      background-color: #94f7d6;
+    }
+
+    to {
+      width: 125px;
+      height: 125px;
+    }
+  }
+}
